@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-gold: #D4AF37;
+  --color-deep-purple: #301934;
+  --color-background-dark: #000000;
+  --color-background-light: #FFFFFF;
+  --color-secondary-dark: #1A1A1A;
+  --color-secondary-light: #F3F4F6;
+}
+
+* {
+  cursor: none !important;
+}
+
+@media (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #301934;
+}
+
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: currentColor;
+  margin-left: 2px;
+  animation: blink-caret 0.75s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+::selection {
+  background: #D4AF37;
+  color: #000000;
+}
+
+.dark ::selection {
+  background: #D4AF37;
+  color: #000000;
+}
+
+.light ::selection {
+  background: #301934;
+  color: #FFFFFF;
+}
