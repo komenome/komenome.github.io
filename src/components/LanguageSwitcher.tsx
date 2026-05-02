@@ -26,20 +26,22 @@ export default function LanguageSwitcher() {
         border: `1px solid ${isDark ? 'rgba(212, 175, 55, 0.2)' : 'rgba(48, 25, 52, 0.2)'}`,
       }}
     >
-      <button
+      <motion.button
         onClick={() => setLanguage('en')}
         className="relative z-10 w-10 text-center px-1 py-1 text-sm font-medium transition-colors duration-200"
         style={{ color: getTextColor('en') }}
+        whileTap={{ scale: 0.9 }}
       >
         EN
-      </button>
-      <button
+      </motion.button>
+      <motion.button
         onClick={() => setLanguage('mm')}
         className="relative z-10 w-10 text-center px-1 py-1 text-sm font-medium transition-colors duration-200"
         style={{ color: getTextColor('mm') }}
+        whileTap={{ scale: 0.9 }}
       >
         MM
-      </button>
+      </motion.button>
       <motion.div
         className="absolute top-1 h-[calc(100%-8px)] rounded-full"
         style={{

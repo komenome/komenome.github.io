@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes'
 import { useLanguage } from '@/context/LanguageContext'
 import { Heart } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Footer() {
   const { resolvedTheme } = useTheme()
@@ -14,9 +15,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
         <p className="text-xs sm:text-sm flex items-center gap-1" style={{ color: isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(48, 25, 52, 0.5)' }}>
           <span style={{ color: isDark ? '#D4AF37' : '#301934' }}>{t('footer_copy')}</span>
-          <Heart className="w-3 h-3 sm:w-4 sm:h-4" style={{ color: isDark ? '#D4AF37' : '#301934' }} />
+          <motion.div
+            whileHover={{ scale: 1.3 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+            style={{ display: 'inline-flex' }}
+          >
+            <Heart className="w-3 h-3 sm:w-4 sm:h-4" style={{ color: isDark ? '#D4AF37' : '#301934' }} />
+          </motion.div>
         </p>
-        <p className="text-xs sm:text-sm" style={{ color: isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(48, 25, 52, 0.5)' }}>{t('footer_rights')}</p>
+        <p className="text-xs sm:text-sm font-body" style={{ color: isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(48, 25, 52, 0.5)' }}>{t('footer_rights')}</p>
       </div>
     </footer>
   )

@@ -10,16 +10,18 @@ export default function ThemeToggle() {
   const isDark = resolvedTheme === 'dark'
 
   return (
-    <button
+    <motion.button
       data-magnetic="true"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       className="relative w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
       aria-label="Toggle theme"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
     >
       <motion.div
         initial={false}
-        animate={{ rotate: isDark ? 0 : 180 }}
-        transition={{ duration: 0.3 }}
+        animate={{ rotate: isDark ? 0 : 180, scale: isDark ? 1 : 0.9 }}
+        transition={{ duration: 0.4, type: 'spring', stiffness: 200, damping: 15 }}
         className="relative"
       >
         {isDark ? (
@@ -28,6 +30,6 @@ export default function ThemeToggle() {
           <Moon className="w-5 h-5 text-deep-purple" />
         )}
       </motion.div>
-    </button>
+    </motion.button>
   )
 }

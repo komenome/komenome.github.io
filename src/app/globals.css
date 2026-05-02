@@ -27,6 +27,8 @@ html {
 
 body {
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar {
@@ -55,6 +57,35 @@ body {
   50% { opacity: 0; }
 }
 
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+  60% { transform: scale(1); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .typewriter-cursor {
   display: inline-block;
   width: 2px;
@@ -78,4 +109,42 @@ body {
 .light ::selection {
   background: #301934;
   color: #FFFFFF;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5E6A3 40%, #D4AF37 60%, #B8960F 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-x 4s ease infinite;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #301934 0%, #6B3A7D 40%, #301934 60%, #1A0D20 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-x 4s ease infinite;
+}
+
+.font-heading {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.font-body {
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 640px) {
+  .font-heading {
+    letter-spacing: -0.01em;
+  }
 }

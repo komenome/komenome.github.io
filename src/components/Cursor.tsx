@@ -12,8 +12,9 @@ export default function Cursor() {
   const rawX = useMotionValue(0)
   const rawY = useMotionValue(0)
 
-  const springX = useSpring(rawX, { stiffness: 500, damping: 28, mass: 0.15 })
-  const springY = useSpring(rawY, { stiffness: 500, damping: 28, mass: 0.15 })
+  const springConfig = { stiffness: 500, damping: 28, mass: 0.15 }
+  const springX = useSpring(rawX, springConfig)
+  const springY = useSpring(rawY, springConfig)
 
   const dotX = useMotionValue(0)
   const dotY = useMotionValue(0)
@@ -84,13 +85,15 @@ export default function Cursor() {
           translateY: '-50%',
         }}
       >
-        <div
+        <motion.div
           className="w-10 h-10 rounded-full border-2"
           style={{
             borderColor: cursorColor,
             filter: `drop-shadow(0 0 8px ${cursorColor})`,
             backgroundColor: 'transparent',
           }}
+          whileHover={{ scale: 1.2 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         />
       </motion.div>
 

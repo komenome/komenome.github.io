@@ -18,14 +18,19 @@ function ServiceCard({ id, delay }: { id: number; delay: number }) {
   const isDark = resolvedTheme === 'dark'
   const service = services.find((s) => s.id === id)!
 
+  const fontFamily = language === 'mm' ? 'var(--font-noto)' : undefined
+  const headingFontFamily = language === 'mm' ? 'var(--font-noto)' : 'var(--font-playfair)'
+
   return (
-    <RevealOnScroll delay={delay}>
-      <div
+    <RevealOnScroll delay={delay} variant="scale-up">
+      <motion.div
         className="group relative rounded-2xl p-3 sm:p-4 md:p-8 transition-all duration-300 overflow-hidden"
         style={{
           backgroundColor: isDark ? 'rgba(26, 26, 26, 0.5)' : 'rgba(243, 244, 246, 0.5)',
           border: `1px solid ${isDark ? 'rgba(212, 175, 55, 0.1)' : 'rgba(48, 25, 52, 0.1)'}`,
         }}
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.3 }}
         data-magnetic="true"
       >
         <motion.div
@@ -33,23 +38,22 @@ function ServiceCard({ id, delay }: { id: number; delay: number }) {
           style={{
             background: `linear-gradient(135deg, ${isDark ? 'rgba(212, 175, 55, 0.08)' : 'rgba(48, 25, 52, 0.08)'} 0%, transparent 50%)`,
           }}
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.3 }}
         />
         <div className="relative z-10">
           <div className="flex items-center justify-between mb-2 sm:mb-4">
             <span className="text-xl sm:text-2xl md:text-4xl">{service.icon}</span>
-            <div
+            <motion.div
               className="w-7 h-7 sm:w-9 md:w-12 flex items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110"
               style={{ backgroundColor: isDark ? 'rgba(212, 175, 55, 0.1)' : 'rgba(48, 25, 52, 0.1)' }}
+              whileHover={{ rotate: 45 }}
             >
               <ArrowUpRight className="w-4 h-4 sm:w-5 md:w-6 sm:h-5 md:h-6" style={{ color: isDark ? '#D4AF37' : '#301934' }} />
-            </div>
+            </motion.div>
           </div>
-          <h3 className="text-sm sm:text-base md:text-2xl font-bold mb-1 sm:mb-2" style={{ color: isDark ? '#D4AF37' : '#301934', fontFamily: language === 'mm' ? 'var(--font-noto)' : 'var(--font-inter)' }}>
+          <h3 className="text-sm sm:text-base md:text-2xl font-bold mb-1 sm:mb-2 font-heading" style={{ color: isDark ? '#D4AF37' : '#301934', fontFamily: headingFontFamily }}>
             {t(service.titleKey as any)}
           </h3>
-          <p className="text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 leading-relaxed" style={{ color: isDark ? 'rgba(255, 255, 255, 0.6)' : 'rgba(48, 25, 52, 0.6)', fontFamily: language === 'mm' ? 'var(--font-noto)' : 'var(--font-inter)' }}>
+          <p className="text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 leading-relaxed font-body" style={{ color: isDark ? 'rgba(255, 255, 255, 0.6)' : 'rgba(48, 25, 52, 0.6)', fontFamily }}>
             {t(service.descKey as any)}
           </p>
           <div className="flex flex-wrap gap-1 sm:gap-2">
@@ -67,7 +71,7 @@ function ServiceCard({ id, delay }: { id: number; delay: number }) {
         <a href="#contact" data-magnetic="true" className="absolute inset-0 z-20" aria-label={`Order ${t(service.titleKey as any)}`}
           onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
         />
-      </div>
+      </motion.div>
     </RevealOnScroll>
   )
 }
@@ -77,13 +81,22 @@ export default function Services() {
   const { resolvedTheme } = useTheme()
   const isDark = resolvedTheme === 'dark'
 
+  const headingFontFamily = language === 'mm' ? 'var(--font-noto)' : 'var(--font-playfair)'
+
   return (
     <section id="services" className="flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16 md:py-24" style={{ backgroundColor: isDark ? '#000000' : '#FFFFFF' }}>
       <div className="max-w-6xl mx-auto w-full">
         <RevealOnScroll>
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4" style={{ color: isDark ? '#D4AF37' : '#301934', fontFamily: language === 'mm' ? 'var(--font-noto)' : 'var(--font-inter)' }}>{t('services_title')}</h2>
-            <div className="w-16 sm:w-20 h-1 mx-auto rounded-full" style={{ backgroundColor: isDark ? '#D4AF37' : '#301934' }} />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 font-heading" style={{ color: isDark ? '#D4AF37' : '#301934', fontFamily: headingFontFamily }}>{t('services_title')}</h2>
+            <motion.div
+              className="w-16 sm:w-20 h-1 mx-auto rounded-full"
+              style={{ backgroundColor: isDark ? '#D4AF37' : '#301934' }}
+              initial={{ width: 0 }}
+              whileInView={{ width: 80 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            />
           </div>
         </RevealOnScroll>
         <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6">
