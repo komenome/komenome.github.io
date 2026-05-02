@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import { useTheme } from 'next-themes'
 import { ChevronDown } from 'lucide-react'
-import HeroGraphic from './HeroGraphic'
+import Lottie from 'lottie-react'
+import faviconAnimation from '../../public/favicon.json'
 
 export default function Hero() {
   const { t, language } = useLanguage()
@@ -94,7 +95,11 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          {mounted && <HeroGraphic isDark={isDark} />}
+          {mounted && (
+            <div className="w-36 sm:w-48 md:w-80 lg:w-96 aspect-square">
+              <Lottie animationData={faviconAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />
+            </div>
+          )}
         </motion.div>
       </div>
       <motion.button
