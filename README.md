@@ -10,7 +10,7 @@
 <br />
 
 <!-- LOGO -->
-<img src="https://raw.githubusercontent.com/komenome/komenome.github.io/main/public/favicon.gif" alt="Logo" width="100" height="100" style="border-radius: 50%; margin-bottom: 16px;">
+<img src="https://raw.githubusercontent.com/komenome/komenome.github.io/main/public/favicon.webp" alt="Logo" width="100" height="100" style="border-radius: 50%; margin-bottom: 16px;">
 
 <!-- TITLE -->
 <h1 align="center" style="font-weight: 700; letter-spacing: -0.5px;">KomeNome</h1>
