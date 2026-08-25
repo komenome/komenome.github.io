@@ -39,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="my" suppressHydrationWarning className={`${playfair.variable} ${dmSans.variable} ${notoSansMyanmar.variable}`}>
-      <body className="dark">
+      <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <LanguageProvider>
             <Cursor />
