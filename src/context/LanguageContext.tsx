@@ -13,17 +13,22 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('en')
+  const [language, setLanguageState] = useState<Language>('mm')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
-    try {
-      const stored = localStorage.getItem('language') as Language | null
-      if (stored === 'en' || stored === 'mm') {
-        setLanguageState(stored)
+    const frame = requestAnimationFrame(() => {
+      setMounted(true)
+      try {
+        const stored = localStorage.getItem('language') as Language | null
+        if (stored === 'en' || stored === 'mm') {
+          setLanguageState(stored)
+        }
+      } catch {
+        // Storage may be disabled by the browser; Myanmar remains the default.
       }
-    } catch {}
+    })
+    return () => cancelAnimationFrame(frame)
   }, [])
 
   const setLanguage = (lang: Language) => {
@@ -38,7 +43,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }
 
   const value: LanguageContextType = {
-    language: mounted ? language : 'en',
+    language: mounted ? language : 'mm',
     setLanguage,
     t,
   }

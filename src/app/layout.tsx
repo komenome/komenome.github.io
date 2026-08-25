@@ -27,8 +27,8 @@ const notoSansMyanmar = Noto_Sans_Myanmar({
 })
 
 export const metadata: Metadata = {
-  title: 'KomeNome | Digital Game Top-Up Services',
-  description: 'Premium digital game top-up services — Fast, reliable, and secure. Mobile Legends, Honor of Kings, PUBG Mobile, and more.',
+  title: 'KomeNome | ယုံကြည်စိတ်ချရသော Game Top-Up ဝန်ဆောင်မှု',
+  description: 'Mobile Legends, Honor of Kings နှင့် PUBG Mobile များအတွက် မြန်ဆန်၊ လုံခြုံပြီး ယုံကြည်စိတ်ချရသော Game Top-Up ဝန်ဆောင်မှု။',
   keywords: ['game top-up', 'Mobile Legends', 'Honor of Kings', 'PUBG Mobile', 'digital services'],
 }
 
@@ -38,15 +38,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${dmSans.variable} ${notoSansMyanmar.variable}`}>
-      <body
-        className="dark"
-        style={{
-          backgroundColor: '#000000',
-          color: '#FFFFFF',
-          fontFamily: 'var(--font-dm-sans)',
-        }}
-      >
+    <html lang="my" suppressHydrationWarning className={`${playfair.variable} ${dmSans.variable} ${notoSansMyanmar.variable}`}>
+      <body className="dark">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <LanguageProvider>
             <Cursor />

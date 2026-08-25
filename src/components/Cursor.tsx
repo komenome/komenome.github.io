@@ -20,7 +20,7 @@ export default function Cursor() {
   const dotY = useMotionValue(0)
 
   const isDark = resolvedTheme === 'dark'
-  const cursorColor = isDark ? '#D4AF37' : '#301934'
+  const cursorColor = isDark ? '#8b7cf6' : '#6551d8'
 
   useEffect(() => {
     rawX.set(mousePosition.x)
@@ -32,7 +32,8 @@ export default function Cursor() {
   useEffect(() => {
     const magneticElements = document.querySelectorAll('[data-magnetic]')
 
-    const handleEnter = (e: MouseEvent) => {
+    const handleEnter: EventListener = (event) => {
+      const e = event as MouseEvent
       const target = e.currentTarget as HTMLElement
       const rect = target.getBoundingClientRect()
       rawX.set(rect.left + rect.width / 2)
@@ -41,7 +42,8 @@ export default function Cursor() {
       dotY.set(rect.top + rect.height / 2)
     }
 
-    const handleMove = (e: MouseEvent) => {
+    const handleMove: EventListener = (event) => {
+      const e = event as MouseEvent
       const target = e.currentTarget as HTMLElement
       const rect = target.getBoundingClientRect()
       rawX.set(rect.left + rect.width / 2)
@@ -58,16 +60,16 @@ export default function Cursor() {
     }
 
     magneticElements.forEach((el) => {
-      el.addEventListener('mouseenter', handleEnter as any)
-      el.addEventListener('mousemove', handleMove as any)
-      el.addEventListener('mouseleave', handleLeave as any)
+      el.addEventListener('mouseenter', handleEnter)
+      el.addEventListener('mousemove', handleMove)
+      el.addEventListener('mouseleave', handleLeave)
     })
 
     return () => {
       magneticElements.forEach((el) => {
-        el.removeEventListener('mouseenter', handleEnter as any)
-        el.removeEventListener('mousemove', handleMove as any)
-        el.removeEventListener('mouseleave', handleLeave as any)
+        el.removeEventListener('mouseenter', handleEnter)
+        el.removeEventListener('mousemove', handleMove)
+        el.removeEventListener('mouseleave', handleLeave)
       })
     }
   }, [mousePosition, rawX, rawY, dotX, dotY])

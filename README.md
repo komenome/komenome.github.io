@@ -1,360 +1,107 @@
 <div align="center">
 
-<!-- PROJECT SHIELDS -->
-[![Next.js][next-shield]][next-url]
-[![TypeScript][ts-shield]][ts-url]
-[![Tailwind CSS][tailwind-shield]][tailwind-url]
-[![Framer Motion][framer-shield]][framer-url]
-[![License][license-shield]][license-url]
+<img src="https://raw.githubusercontent.com/komenome/komenome.github.io/main/public/favicon.webp" alt="KomeNome Logo" width="104" height="104">
 
-<br />
+# KomeNome Portfolio
 
-<!-- LOGO -->
-<img src="https://raw.githubusercontent.com/komenome/komenome.github.io/main/public/favicon.webp" alt="Logo" width="100" height="100" style="border-radius: 50%; margin-bottom: 16px;">
+**မြန်ဆန် · လုံခြုံ · ယုံကြည်စိတ်ချရသော Game Top-Up ဝန်ဆောင်မှု**
 
-<!-- TITLE -->
-<h1 align="center" style="font-weight: 700; letter-spacing: -0.5px;">KomeNome</h1>
+[![Next.js](https://img.shields.io/badge/Next.js-16-080c17?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub_Pages-6551D8?style=flat-square&logo=github)](https://komenome.github.io)
 
-<!-- TAGLINE -->
-<p align="center" style="font-size: 18px; color: #666;">
-  <strong>Premium Digital Game Top-Up Services</strong>
-  <br />
-  Fast · Reliable · Secure
-</p>
-
-<p align="center">
-  <a href="https://komenome.github.io" target="_blank"><strong>🌐 Visit Live Site »</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="#-features"><strong>Explore Features</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="#-getting-started"><strong>Getting Started</strong></a>
-</p>
+[Live Website သို့ သွားရန်](https://komenome.github.io)
 
 </div>
 
----
+## ဒီ Project အကြောင်း
 
-## 📋 Table of Contents
+KomeNome သည် Mobile Legends၊ Honor of Kings နှင့် PUBG Mobile ဂိမ်းများအတွက် Top-Up ဝန်ဆောင်မှုများကို မိတ်ဆက်ပြသထားသော bilingual portfolio website ဖြစ်ပါတယ်။ မြန်မာနှင့် အင်္ဂလိပ်ဘာသာ နှစ်မျိုးလုံးအသုံးပြုနိုင်ပြီး ဖုန်း၊ Tablet နှင့် Desktop များတွင် အဆင်ပြေစွာကြည့်ရှုနိုင်အောင် တည်ဆောက်ထားပါတယ်။
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Screenshots](#-screenshots)
-- [Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Development](#development)
-  - [Build](#build)
-- [Project Structure](#-project-structure)
-- [Customization](#-customization)
-  - [Colors](#colors)
-  - [Fonts](#fonts)
-  - [Translations](#translations)
-- [Deployment](#-deployment)
-- [License](#-license)
+Website ကို static export ပြုလုပ်ထားသောကြောင့် server မလိုဘဲ GitHub Pages ပေါ်တွင် မြန်ဆန်စွာ အသုံးပြုနိုင်ပါတယ်။
 
----
+## အဓိကလုပ်ဆောင်ချက်များ
 
-## ✨ Overview
+- မြန်မာ/အင်္ဂလိပ် ဘာသာစကားပြောင်းလဲအသုံးပြုနိုင်ခြင်း
+- Dark mode နှင့် Light mode ပါဝင်ခြင်း
+- Mobile-first responsive layout
+- Facebook၊ Telegram နှင့် Viber တို့သို့ တိုက်ရိုက်ဆက်သွယ်နိုင်ခြင်း
+- Framer Motion ဖြင့် နူးညံ့သော animation များ
+- မြန်မာစာအတွက် Noto Sans Myanmar font နှင့် သင့်တော်သော line spacing
+- Next.js static export နှင့် GitHub Actions auto deployment
+- Keyboard navigation နှင့် reduced-motion preference ကို ထောက်ပံ့ခြင်း
 
-**KomeNome** is a premium portfolio and service platform for digital game top-ups. Built with a focus on elegance, performance, and user experience, the site features a cinematic dark theme with gold accents, fluid animations, and bilingual support for English and Myanmar audiences.
+## အသုံးပြုထားသော နည်းပညာများ
 
-The design philosophy centers on **luxury minimalism** — using generous whitespace, refined typography, and purposeful motion to create an immersive experience that reflects the premium nature of the services offered.
+| အမျိုးအစား | နည်းပညာ |
+|---|---|
+| Framework | Next.js 16 / React 19 |
+| Programming Language | TypeScript |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion / Lottie |
+| Icons | Lucide React နှင့် custom brand SVG |
+| Theme | next-themes |
+| Deployment | GitHub Pages / GitHub Actions |
 
-> 🎯 **Target Audience:** Gamers in Myanmar and Southeast Asia looking for fast, trustworthy digital top-up services for Mobile Legends, Honor of Kings, and PUBG Mobile.
+## Local တွင် စတင်အသုံးပြုရန်
 
----
-
-## 🎨 Features
-
-<details open>
-<summary><b>Visual Design</b></summary>
-
-- **Dual Theme System** — Seamless dark/light mode toggle with `next-themes`
-  - 🌑 **Dark:** Gold (`#D4AF37`) on pure black (`#000000`)
-  - ☀️ **Light:** Deep purple (`#301934`) on white (`#FFFFFF`)
-- **Premium Typography** — Playfair Display serif headings paired with DM Sans body text
-- **Animated SVG Hero** — Custom concentric ring graphic with pulsing particles and glow effects
-- **Gradient Shimmer Text** — Animated gold/purple gradient on the hero title
-- **Custom Scrollbar** — Themed scrollbar with smooth styling
-
-</details>
-
-<details open>
-<summary><b>Interactions & Animations</b></summary>
-
-- **Magnetic Cursor** — Custom cursor that snaps to interactive elements (desktop)
-- **Framer Motion Animations** — Page transitions, scroll reveals, hover micro-interactions
-- **Typewriter Effect** — Character-by-character text reveal in hero section
-- **Scroll-Triggered Reveals** — Four animation variants (fade-up, fade-left, fade-right, scale-up)
-- **Card Lift Effects** — Subtle elevation on hover for service and contact cards
-- **Spring Physics** — Natural-feeling motion on toggles, buttons, and UI elements
-
-</details>
-
-<details open>
-<summary><b>Functionality</b></summary>
-
-- **Bilingual Support** — Full English (EN) / Myanmar (MM) language toggle with localStorage persistence
-- **Fully Responsive** — Optimized from mobile (320px) to ultra-wide (4K) displays
-- **Static Export** — Zero-runtime dependency, served as pure HTML/CSS/JS
-- **GitHub Pages Deploy** — Automated CI/CD via GitHub Actions
-
-</details>
-
----
-
-## 🛠 Tech Stack
-
-<div align="center">
-
-| Category | Technology | Version |
-|----------|-----------|---------|
-| **Framework** | [Next.js](https://nextjs.org/) | `15.2.0` |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) | `5.5.0` |
-| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | `3.4.17` |
-| **Animation** | [Framer Motion](https://www.framer.com/motion/) | `11.18.0` |
-| **Icons** | [Lucide React](https://lucide.dev/) | `0.460.0` |
-| **Theming** | [next-themes](https://github.com/pacocoursey/next-themes) | `0.4.4` |
-
-</div>
-
-### Typography
-
-| Font | Role | Source |
-|------|------|--------|
-| **Playfair Display** | Headings & Display | Google Fonts |
-| **DM Sans** | Body & UI Text | Google Fonts |
-| **Noto Sans Myanmar** | Burmese Script | Google Fonts |
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-| Dark Mode Hero | Light Mode Services |
-|:---:|:---:|
-| *Screenshot placeholder* | *Screenshot placeholder* |
-
-| Mobile View | Contact Section |
-|:---:|:---:|
-| *Screenshot placeholder* | *Screenshot placeholder* |
-
-</div>
-
-> 💡 **Tip:** Add your own screenshots by replacing the placeholders above. Place images in `/public/screenshots/` and reference them with relative paths.
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-Ensure you have the following installed:
-
-- **Node.js** `>= 18.0.0`
-- **npm** `>= 9.0.0` (or **yarn** / **pnpm**)
-
-### Installation
+လိုအပ်ချက်များ — Node.js 20 သို့မဟုတ် အထက်နှင့် npm 9 သို့မဟုတ် အထက်။
 
 ```bash
-# Clone the repository
-git clone https://github.com/KomeNome/komenome.github.io.git
-
-# Navigate into the project directory
+git clone https://github.com/komenome/komenome.github.io.git
 cd komenome.github.io
-
-# Install dependencies
 npm install
-```
-
-### Development
-
-```bash
-# Start the development server
 npm run dev
 ```
 
-The application will be available at **[http://localhost:3000](http://localhost:3000)**.
+Browser တွင် [http://localhost:3000](http://localhost:3000) ကို ဖွင့်ပြီးကြည့်ရှုနိုင်ပါတယ်။
 
-### Build
+## စစ်ဆေးခြင်းနှင့် Production Build
 
 ```bash
-# Create an optimized production build
+# Code quality စစ်ရန်
+npm run lint
+
+# Production static export ထုတ်ရန်
 npm run build
 ```
 
-The static export will be generated in the `/out` directory, ready for deployment to any static hosting service.
+Build အောင်မြင်ပါက static website files များကို `out/` folder ထဲတွင် ရရှိပါမယ်။
 
----
+## Project ဖွဲ့စည်းပုံ
 
-## 📁 Project Structure
+```text
+src/
+├── app/                 # Layout၊ metadata နှင့် global styles
+├── components/          # Hero၊ Services၊ Contact စသည့် UI အစိတ်အပိုင်းများ
+├── context/             # ဘာသာစကား state နှင့် provider
+├── hooks/               # Mouse interaction hooks
+└── lib/                 # မြန်မာ/အင်္ဂလိပ် ဘာသာပြန်စာသားများ
 
-```
-portfolio/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # GitHub Actions CI/CD pipeline
-├── public/                     # Static assets
-├── src/
-│   ├── app/
-│   │   ├── globals.css         # Global styles, custom keyframes, scrollbar
-│   │   ├── layout.tsx          # Root layout with font loading & providers
-│   │   └── page.tsx            # Home page composition
-│   ├── components/
-│   │   ├── About.tsx           # About section with social links
-│   │   ├── Contact.tsx         # Contact methods grid
-│   │   ├── Cursor.tsx          # Custom magnetic cursor (desktop only)
-│   │   ├── Footer.tsx          # Footer with animated heart icon
-│   │   ├── Hero.tsx            # Hero section with typewriter effect
-│   │   ├── HeroGraphic.tsx     # Custom animated SVG concentric rings
-│   │   ├── LanguageSwitcher.tsx # EN/MM toggle with spring animation
-│   │   ├── Navbar.tsx          # Fixed glassmorphism navbar
-│   │   ├── RevealOnScroll.tsx  # Scroll-triggered animation wrapper
-│   │   ├── Services.tsx        # Service cards with hover lift
-│   │   └── ThemeToggle.tsx     # Dark/light mode toggle
-│   ├── context/
-│   │   └── LanguageContext.tsx  # React Context for i18n state
-│   ├── hooks/
-│   │   └── useMousePosition.ts  # Custom hook for cursor tracking
-│   └── lib/
-│       └── translations.ts      # EN & MM translation strings
-├── next.config.js              # Next.js configuration (static export)
-├── tailwind.config.ts          # Tailwind theme customization
-├── postcss.config.js           # PostCSS configuration
-├── tsconfig.json               # TypeScript configuration
-├── package.json
-└── README.md                   # This file
+public/                  # Logo နှင့် animation assets
+.github/workflows/       # GitHub Pages deployment workflow
 ```
 
----
+## စိတ်ကြိုက်ပြင်ဆင်ရန်
 
-## 🎨 Customization
+- စာသားများ — `src/lib/translations.ts`
+- အရောင်နှင့် global design tokens — `src/app/globals.css`
+- Social link များ — `src/components/Contact.tsx`
+- Font နှင့် metadata — `src/app/layout.tsx`
 
-### Colors
+ဘာသာပြန် key အသစ်ထည့်သည့်အခါ `en` နှင့် `mm` နှစ်နေရာစလုံးတွင် key တူတူထည့်ပေးရပါမယ်။
 
-The color system is centralized in `src/app/globals.css` and `tailwind.config.ts`:
+## Deployment
 
-```css
-/* src/app/globals.css */
-:root {
-  --color-gold: #D4AF37;           /* Primary accent (dark mode) */
-  --color-deep-purple: #301934;    /* Primary accent (light mode) */
-  --color-background-dark: #000000;
-  --color-background-light: #FFFFFF;
-  --color-secondary-dark: #1A1A1A;
-  --color-secondary-light: #F3F4F6;
-}
-```
+`main` branch သို့ push လုပ်လိုက်တိုင်း `.github/workflows/deploy.yml` က အောက်ပါအဆင့်များကို အလိုအလျောက်လုပ်ဆောင်ပေးပါတယ်။
 
-| Token | Dark Mode | Light Mode |
-|-------|-----------|------------|
-| `gold` | `#D4AF37` | `#301934` |
-| `background` | `#000000` | `#FFFFFF` |
-| `secondary` | `#1A1A1A` | `#F3F4F6` |
+1. Dependency များ install ပြုလုပ်ခြင်း
+2. Next.js production build ပြုလုပ်ခြင်း
+3. `out/` folder ကို GitHub Pages သို့ deploy ပြုလုပ်ခြင်း
 
-### Fonts
+Repository ၏ **Settings → Pages → Source** ကို **GitHub Actions** အဖြစ်ရွေးထားရန် လိုအပ်ပါတယ်။
 
-Fonts are loaded via `next/font/google` in `src/app/layout.tsx`:
+## မူပိုင်ခွင့်
 
-```tsx
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-})
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-dm-sans',
-})
-```
-
-To change fonts, replace these imports and update the CSS variable references in `tailwind.config.ts`.
-
-### Translations
-
-All text content is managed in `src/lib/translations.ts`. Add new keys to both the `en` and `mm` objects:
-
-```ts
-export const translations = {
-  en: {
-    your_new_key: 'Your English Text',
-  },
-  mm: {
-    your_new_key: 'သင့်ရဲ့ မြန်မာစာ',
-  },
-}
-```
-
----
-
-## 🚢 Deployment
-
-### GitHub Pages (Recommended)
-
-This project is configured for automatic deployment to GitHub Pages via GitHub Actions.
-
-**Setup:**
-
-1. Go to **Settings → Pages** in your GitHub repository
-2. Set **Source** to "GitHub Actions"
-3. Push to the `main` branch — the workflow (`.github/workflows/deploy.yml`) will automatically:
-   - Build the Next.js static export
-   - Deploy the `out/` directory to GitHub Pages
-
-**Manual Deploy:**
-
-```bash
-npm run build
-# Upload the contents of /out to your hosting provider
-```
-
-### Configuration
-
-`next.config.js`:
-
-```js
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,  // Required for static export
-  },
-}
-
-module.exports = nextConfig
-```
-
----
-
-## 📄 License
-
-```
-Copyright © 2026 KomeNome. All rights reserved.
-```
-
-This project and its contents are proprietary. Unauthorized copying, distribution, or modification is strictly prohibited.
-
----
-
-<div align="center">
-
-**Crafted with precision and passion**
-
-[🌐 komenome.github.io](https://komenome.github.io)
-
-</div>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[next-shield]: https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white
-[next-url]: https://nextjs.org/
-[ts-shield]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
-[ts-url]: https://www.typescriptlang.org/
-[tailwind-shield]: https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white
-[tailwind-url]: https://tailwindcss.com/
-[framer-shield]: https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white
-[framer-url]: https://www.framer.com/motion/
-[license-shield]: https://img.shields.io/badge/License-Proprietary-1A1A1A?style=for-the-badge
-[license-url]: #license
+Copyright © 2026 KomeNome. မူပိုင်ခွင့်အားလုံး ရရှိပြီးဖြစ်သည်။ ခွင့်ပြုချက်မရှိဘဲ ကူးယူခြင်း၊ ဖြန့်ဝေခြင်း သို့မဟုတ် ပြန်လည်ပြင်ဆင်ခြင်း မပြုရပါ။
